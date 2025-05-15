@@ -1,8 +1,21 @@
-[gd_scene load_steps=3 format=3 uid="uid://dcs0aiuye7y8"]
+[gd_scene load_steps=7 format=3 uid="uid://dcs0aiuye7y8"]
 
 [ext_resource type="PackedScene" uid="uid://dts6pa2db4qwv" path="res://Scene/Player.tscn" id="1_6igcf"]
+[ext_resource type="Texture2D" uid="uid://bph0ibcorip3i" path="res://Sprite-0001.png" id="2_u6khg"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6igcf"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_6igcf"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u6khg"]
+texture = ExtResource("2_u6khg")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_ou18a"]
+sources/0 = SubResource("TileSetAtlasSource_u6khg")
 
 [node name="Game" type="Node2D"]
 
@@ -15,5 +28,14 @@ scale = Vector2(0.25, 0.25)
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-1, 1)
+position = Vector2(1, 1)
 shape = SubResource("WorldBoundaryShape2D_6igcf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(7, 1)
+scale = Vector2(29.975, 29.975)
+shape = SubResource("SegmentShape2D_6igcf")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_ou18a")
+format = 2
