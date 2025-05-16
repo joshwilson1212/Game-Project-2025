@@ -1,7 +1,12 @@
-[gd_scene load_steps=19 format=3 uid="uid://dts6pa2db4qwv"]
+[gd_scene load_steps=22 format=3 uid="uid://dts6pa2db4qwv"]
 
 [ext_resource type="Script" uid="uid://do070i1x8x50q" path="res://Scripts/Player.gd" id="1_yx0hs"]
 [ext_resource type="Texture2D" uid="uid://dupdjxmjjbm6l" path="res://Assets/New_Piskel_25_15.png" id="2_3eeal"]
+[ext_resource type="Texture2D" uid="uid://c51cjp81g5352" path="res://Assets/Sprite-0003.png" id="2_jvxg0"]
+[ext_resource type="PackedScene" uid="uid://cacwu24giyva1" path="res://animation_player.tscn" id="3_mud5u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jvxg0"]
+size = Vector2(25, 15)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jvxg0"]
 atlas = ExtResource("2_3eeal")
@@ -159,9 +164,24 @@ size = Vector2(12, 25)
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_yx0hs")
 
+[node name="Sprites" type="Node2D" parent="."]
+
+[node name="Sword" type="Sprite2D" parent="Sprites"]
+position = Vector2(10, 2)
+texture = ExtResource("2_jvxg0")
+
+[node name="sword hit" type="Area2D" parent="Sprites/Sword"]
+scale = Vector2(-1, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprites/Sword/sword hit"]
+position = Vector2(-5, 1)
+shape = SubResource("RectangleShape2D_jvxg0")
+
+[node name="AnimationPlayer" parent="Sprites/Sword" instance=ExtResource("3_mud5u")]
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_q3xbo")
-animation = &"Walking up"
+animation = &"Right Idel"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2.5)
@@ -173,4 +193,5 @@ one_shot = true
 
 [node name="Timer" type="Timer" parent="dashtimer"]
 
+[connection signal="area_entered" from="Sprites/Sword/sword hit" to="." method="_on_sword_hit_area_entered"]
 [connection signal="timeout" from="dashtimer" to="." method="_on_dashtimer_timeout"]

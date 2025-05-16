@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://cacwu24giyva1"]
+
+[ext_resource type="Texture2D" uid="uid://bb26ibpj8muty" path="res://Assets/Sprite-0005.png" id="1_w4v6v"]
+[ext_resource type="Texture2D" uid="uid://c51cjp81g5352" path="res://Assets/Sprite-0003.png" id="2_1uthr"]
+[ext_resource type="Texture2D" uid="uid://dfrxx6bkq7deo" path="res://Assets/Sprite-0004.png" id="3_khti1"]
+
+[sub_resource type="Animation" id="Animation_3pik8"]
+resource_name = "Attack"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/Sword:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.133333, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("1_w4v6v"), ExtResource("2_1uthr"), ExtResource("3_khti1"), ExtResource("1_w4v6v")]
+}
+
+[sub_resource type="Animation" id="Animation_adgam"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/Sword:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_1uthr")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g1hv4"]
+_data = {
+&"Attack": SubResource("Animation_3pik8"),
+&"RESET": SubResource("Animation_adgam")
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer"]
+root_node = NodePath("../../..")
+libraries = {
+&"": SubResource("AnimationLibrary_g1hv4")
+}
