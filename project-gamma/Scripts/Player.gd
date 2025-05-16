@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 var SPEED = 100
 const JUMP_VELOCITY = -150
-
+var is_ready: bool = true
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -14,7 +14,8 @@ func _physics_process(delta: float) -> void:
 	
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down",)
 	# Dash Code. Space key is the button for this
-	if Input.is_action_just_pressed("dash"):
+	if Input.is_action_just_pressed("dash") and is_ready:
+		is_ready = false
 		$dashtimer.start()
 		SPEED *= 5
 		velocity = direction * SPEED
@@ -42,6 +43,7 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-#resets to normal speed
-func _on_dashtimer_timeout() -> void:
+#resets to normal speed after dash
+func _on_dashtimer_timeout():
+	is_ready = true
 	SPEED = 100

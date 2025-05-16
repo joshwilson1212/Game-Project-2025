@@ -168,7 +168,9 @@ position = Vector2(0, 2.5)
 shape = SubResource("RectangleShape2D_parcb")
 
 [node name="dashtimer" type="Timer" parent="."]
-wait_time = 0.384
+wait_time = 0.25
 one_shot = true
+
+[node name="Timer" type="Timer" parent="dashtimer"]
 
 [connection signal="timeout" from="dashtimer" to="." method="_on_dashtimer_timeout"]
