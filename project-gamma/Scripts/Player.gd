@@ -1,22 +1,21 @@
 extends CharacterBody2D
 
-
 var SPEED = 100
-const JUMP_VELOCITY = -150
 var is_ready: bool = true
 @export var attacking = false;
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var animation = $Sprites/Sword/AnimationPlayer
+
 var idle_direction = "Down Idel"
 
-#for sword 
+#calls every frame processed 
 func _process(delta):
+	#checks if the mouse button was clicked and moves the sword
 	if Input.is_action_just_pressed("Attack"):
 		attack()
 
 func _physics_process(delta: float) -> void:
-	
-	
+	#finds out what direction the character is moving
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down",)
 	
 	# Dash Code. Space key is the button for this
@@ -25,7 +24,8 @@ func _physics_process(delta: float) -> void:
 		$dashtimer.start()
 		SPEED *= 5
 		velocity = direction * SPEED
-		
+	
+	#statments to handles walking direction and animimation from input
 	if direction.x > 0:
 		idle_direction = "Right Idel"
 		animated_sprite.flip_h = false
@@ -43,10 +43,8 @@ func _physics_process(delta: float) -> void:
 	else:
 		animated_sprite.play(idle_direction)
 	
-
+	#sets velocity and moves accordinly to it 
 	velocity = direction * SPEED
-	
-
 	move_and_slide()
 
 #resets to normal speed after dash
@@ -58,7 +56,7 @@ func _on_dashtimer_timeout():
 func attack():
 	attacking = true
 	animation.play("Attack")
-
+	
 
 func _on_sword_hit_area_entered(area):
 	if area.is_in_group("hurtbox"):

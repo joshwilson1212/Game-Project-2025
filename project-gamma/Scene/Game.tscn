@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dcs0aiuye7y8"]
+[gd_scene load_steps=10 format=4 uid="uid://dcs0aiuye7y8"]
 
 [ext_resource type="PackedScene" uid="uid://dts6pa2db4qwv" path="res://Scene/Player.tscn" id="1_6igcf"]
 [ext_resource type="Texture2D" uid="uid://cg30ijcj675nk" path="res://Assets/Sprite-0001-export.png" id="1_u6khg"]
@@ -9,9 +9,6 @@
 texture = ExtResource("1_u6khg")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
-1:0/0 = 0
-0:1/0 = 0
-1:1/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_ou18a"]
 tile_size = Vector2i(32, 32)
@@ -20,10 +17,7 @@ sources/0 = SubResource("TileSetAtlasSource_u6khg")
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mopgc"]
 texture = ExtResource("3_ou18a")
 texture_region_size = Vector2i(32, 32)
-0:1/0 = 0
 0:0/0 = 0
-1:0/0 = 0
-1:1/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_ivtx6"]
 tile_size = Vector2i(32, 32)
@@ -33,22 +27,17 @@ sources/0 = SubResource("TileSetAtlasSource_mopgc")
 
 [node name="Game" type="Node2D"]
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="Layer1" type="TileMapLayer" parent="."]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAAAP//AAAAAAAAAAD4/wAAAAAAAAAAAAD5/wAAAAAAAAAAAAD6/wAAAAAAAAAAAAD7/wAAAAAAAAAAAAD8/wAAAAAAAAAAAAD9/wAAAAAAAAAAAAD+/wAAAAAAAAAAAAD//wAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAADAP//AAAAAAAAAAACAP//AAAAAAAAAAABAP//AAAAAAAAAAD/////AAAAAAAAAAD+////AAAAAAAAAAD9////AAAAAAAAAAD8////AAAAAAAAAAD7////AAAAAAAAAAD6////AAAAAAAAAAD5////AAAAAAAAAAD4////AAAAAAAAAAD4//7/AAAAAAAAAAD5//7/AAAAAAAAAAD6//7/AAAAAAAAAAD7//7/AAAAAAAAAAD8//7/AAAAAAAAAAD9//7/AAAAAAAAAAD+//7/AAAAAAAAAAD///7/AAAAAAAAAAAAAP7/AAAAAAAAAAABAP7/AAAAAAAAAAACAP7/AAAAAAAAAAADAP7/AAAAAAAAAAADAP3/AAAAAAAAAAACAP3/AAAAAAAAAAABAP3/AAAAAAAAAAAAAP3/AAAAAAAAAAD///3/AAAAAAAAAAD+//3/AAAAAAAAAAD9//3/AAAAAAAAAAD8//3/AAAAAAAAAAD7//3/AAAAAAAAAAD6//3/AAAAAAAAAAD5//3/AAAAAAAAAAD4//3/AAAAAAAAAAAEAP3/AAAAAAAAAAAEAP7/AAAAAAAAAAAEAP//AAAAAAAAAAAEAAAAAAAAAAAAAAAEAPz/AAAAAAAAAAADAPz/AAAAAAAAAAACAPz/AAAAAAAAAAABAPz/AAAAAAAAAAAAAPz/AAAAAAAAAAD///z/AAAAAAAAAAD+//z/AAAAAAAAAAD9//z/AAAAAAAAAAD8//z/AAAAAAAAAAD7//z/AAAAAAAAAAD6//z/AAAAAAAAAAD5//z/AAAAAAAAAAD4//z/AAAAAAAAAAD3//z/AAAAAAAAAAD3//3/AAAAAAAAAAD3//7/AAAAAAAAAAD3////AAAAAAAAAAD3/wAAAAAAAAAAAAD+//v/AAAAAAAAAAD+//r/AAAAAAAAAAD+//n/AAAAAAAAAAD+//j/AAAAAAAAAAD+//f/AAAAAAAAAAABAPf/AAAAAAAAAAABAPj/AAAAAAAAAAABAPn/AAAAAAAAAAABAPr/AAAAAAAAAAABAPv/AAAAAAAAAAD+//b/AAAAAAAAAAABAPb/AAAAAAAAAAA=")
 tile_set = SubResource("TileSet_ou18a")
-format = 2
-layer_0/tile_data = PackedInt32Array(-65536, 0, 0, 65528, 0, 0, 65529, 0, 0, 65530, 0, 0, 65531, 0, 0, 65532, 0, 0, 65533, 0, 0, 65534, 0, 0, 65535, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 0, 3, 0, 0, -65533, 0, 0, -65534, 0, 0, -65535, 0, 0, -1, 0, 0, -2, 0, 0, -3, 0, 0, -4, 0, 0, -5, 0, 0, -6, 0, 0, -7, 0, 0, -8, 0, 0, -65544, 0, 0, -65543, 0, 0, -65542, 0, 0, -65541, 0, 0, -65540, 0, 0, -65539, 0, 0, -65538, 0, 0, -65537, 0, 0, -131072, 0, 0, -131071, 0, 0, -131070, 0, 0, -131069, 0, 0, -196605, 0, 0, -196606, 0, 0, -196607, 0, 0, -196608, 0, 0, -131073, 0, 0, -131074, 0, 0, -131075, 0, 0, -131076, 0, 0, -131077, 0, 0, -131078, 0, 0, -131079, 0, 0, -131080, 0, 0, -196604, 0, 0, -131068, 0, 0, -65532, 0, 0, 4, 0, 0, -262140, 0, 0, -262141, 0, 0, -262142, 0, 0, -262143, 0, 0, -262144, 0, 0, -196609, 0, 0, -196610, 0, 0, -196611, 0, 0, -196612, 0, 0, -196613, 0, 0, -196614, 0, 0, -196615, 0, 0, -196616, 0, 0, -196617, 0, 0, -131081, 0, 0, -65545, 0, 0, -9, 0, 0, 65527, 0, 0, -262146, 0, 0, -327682, 0, 0, -393218, 0, 0, -458754, 0, 0, -524290, 0, 0, -589823, 0, 0, -524287, 0, 0, -458751, 0, 0, -393215, 0, 0, -327679, 0, 0, -589826, 0, 0, -655359, 0, 0)
 
-[node name="TileMap2" type="TileMap" parent="TileMap"]
+[node name="Layer0" type="TileMapLayer" parent="Layer1"]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAD///v/AAAAAAAAAAAAAPv/AAAAAAAAAAD///r/AAAAAAAAAAD///n/AAAAAAAAAAD///j/AAAAAAAAAAAAAPj/AAAAAAAAAAAAAPn/AAAAAAAAAAAAAPr/AAAAAAAAAAD///f/AAAAAAAAAAAAAPf/AAAAAAAAAAA=")
 tile_set = SubResource("TileSet_ivtx6")
-format = 2
-layer_0/tile_data = PackedInt32Array(-262145, 0, 0, -327680, 0, 0, -327681, 0, 0, -393217, 0, 0, -458753, 0, 0, -524288, 0, 0, -458752, 0, 0, -393216, 0, 0, -524289, 0, 0, -589824, 0, 0)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_6igcf")]
-position = Vector2(17, -16)
-
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
-position = Vector2(-17, 16)
-zoom = Vector2(3, 3)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(-1, 12)
