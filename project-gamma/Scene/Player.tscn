@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dfrxx6bkq7deo" path="res://Assets/Sprite-0004.png" id="4_fvocf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jvxg0"]
-size = Vector2(25, 15)
+size = Vector2(15.5, 15)
 
 [sub_resource type="Animation" id="Animation_3pik8"]
 resource_name = "Attack"
@@ -23,6 +23,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [ExtResource("2_jvxg0"), ExtResource("4_fvocf"), ExtResource("2_mud5u"), ExtResource("2_jvxg0")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/Sword/sword hit/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
 }
 
 [sub_resource type="Animation" id="Animation_adgam"]
@@ -212,8 +224,11 @@ texture = ExtResource("2_jvxg0")
 scale = Vector2(-1, -1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprites/Sword/sword hit"]
-position = Vector2(-5, 1)
+position = Vector2(-0.25, 1)
 shape = SubResource("RectangleShape2D_jvxg0")
+disabled = true
+
+[node name="AttackCD" type="Timer" parent="Sprites/Sword/sword hit"]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprites/Sword"]
 root_node = NodePath("../../..")
@@ -225,7 +240,7 @@ libraries = {
 sprite_frames = SubResource("SpriteFrames_q3xbo")
 animation = &"Right Idel"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="PlayerHitbox" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2.5)
 shape = SubResource("RectangleShape2D_parcb")
 
@@ -239,4 +254,5 @@ one_shot = true
 zoom = Vector2(3, 3)
 
 [connection signal="area_entered" from="Sprites/Sword/sword hit" to="." method="_on_sword_hit_area_entered"]
+[connection signal="timeout" from="Sprites/Sword/sword hit/AttackCD" to="." method="_on_attack_cd_timeout"]
 [connection signal="timeout" from="dashtimer" to="." method="_on_dashtimer_timeout"]
