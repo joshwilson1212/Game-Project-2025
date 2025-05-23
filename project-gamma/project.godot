@@ -13,7 +13,6 @@ config_version=5
 config/name="Project Gamma"
 run/main_scene="uid://dcs0aiuye7y8"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://icon.svg"
 
 [editor]
 
