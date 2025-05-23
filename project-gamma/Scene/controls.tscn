@@ -1,0 +1,75 @@
+[gd_scene load_steps=4 format=3 uid="uid://blrckm027tu7t"]
+
+[ext_resource type="PackedScene" uid="uid://cqgtuuxk3ryh4" path="res://Scene/hot_key_rebind.tscn" id="1_ev01i"]
+[ext_resource type="Script" uid="uid://cfo6sxeftdjbb" path="res://Scene/controls.gd" id="1_n4v4r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ev01i"]
+
+[node name="Controls" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -71.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n4v4r")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 107.0
+offset_top = 98.0
+offset_right = 1035.0
+offset_bottom = 559.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 64
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ev01i")
+
+[node name="HotKeyRebind3" parent="MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_ev01i")]
+layout_mode = 2
+
+[node name="HotKeyRebind4" parent="MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_ev01i")]
+layout_mode = 2
+action_name = "move_right"
+
+[node name="HotKeyRebind5" parent="MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_ev01i")]
+layout_mode = 2
+action_name = "move_up"
+
+[node name="HotKeyRebind6" parent="MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_ev01i")]
+layout_mode = 2
+action_name = "move_down"
+
+[node name="HotKeyRebind2" parent="MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_ev01i")]
+layout_mode = 2
+action_name = "dash"
+
+[node name="HotKeyRebind" parent="MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_ev01i")]
+layout_mode = 2
+action_name = "Attack"
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ev01i")
+
+[node name="back_button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 590.0
+offset_right = 167.0
+offset_bottom = 634.0
+text = "Back"
+
+[connection signal="pressed" from="back_button" to="." method="_on_back_button_pressed"]
