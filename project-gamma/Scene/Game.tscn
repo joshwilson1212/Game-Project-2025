@@ -58,7 +58,7 @@ texture = ExtResource("4_mopgc")
 position = Vector2(70, 0)
 
 [node name="Enemy_Skeleton2" parent="." instance=ExtResource("5_ivtx6")]
-position = Vector2(-168, -34)
+position = Vector2(-179, 53)
 
 [node name="Enemy_Skeleton3" parent="." instance=ExtResource("5_ivtx6")]
 position = Vector2(-81, -69)
