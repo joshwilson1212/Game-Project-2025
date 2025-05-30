@@ -1,14 +1,15 @@
-[gd_scene load_steps=27 format=3 uid="uid://dts6pa2db4qwv"]
+[gd_scene load_steps=28 format=3 uid="uid://dts6pa2db4qwv"]
 
 [ext_resource type="Script" uid="uid://do070i1x8x50q" path="res://Scripts/Player.gd" id="1_yx0hs"]
 [ext_resource type="Texture2D" uid="uid://dupdjxmjjbm6l" path="res://Assets/New_Piskel_25_15.png" id="2_3eeal"]
 [ext_resource type="Texture2D" uid="uid://c51cjp81g5352" path="res://Assets/Sprite-0003.png" id="2_jvxg0"]
-[ext_resource type="Texture2D" uid="uid://bb26ibpj8muty" path="res://Assets/Sprite-0005.png" id="2_mud5u"]
 [ext_resource type="Script" uid="uid://cy3vcklb0fpim" path="res://Scene/Sword.gd" id="2_pmp2f"]
-[ext_resource type="Texture2D" uid="uid://dfrxx6bkq7deo" path="res://Assets/Sprite-0004.png" id="4_fvocf"]
+[ext_resource type="Texture2D" uid="uid://1nly6pvwdpr4" path="res://Assets/Sprite-swing2.png" id="4_pmp2f"]
+[ext_resource type="Texture2D" uid="uid://cecnn3qg870lp" path="res://Assets/Sprite-swing4.png" id="5_3pik8"]
+[ext_resource type="Texture2D" uid="uid://can00mv4jmwpk" path="res://Assets/Sprite-swing5.png" id="6_3pik8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jvxg0"]
-size = Vector2(15.5, 15)
+size = Vector2(21.5, 24)
 
 [sub_resource type="Animation" id="Animation_3pik8"]
 resource_name = "Attack"
@@ -23,7 +24,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [ExtResource("2_jvxg0"), ExtResource("4_fvocf"), ExtResource("2_mud5u"), ExtResource("2_jvxg0")]
+"values": [ExtResource("2_jvxg0"), ExtResource("4_pmp2f"), ExtResource("5_3pik8"), ExtResource("6_3pik8")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -212,7 +213,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_parcb"]
 size = Vector2(12, 25)
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_yx0hs")
 
 [node name="Sprites" type="Node2D" parent="."]
@@ -226,7 +227,7 @@ texture = ExtResource("2_jvxg0")
 scale = Vector2(-1, -1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprites/Sword/sword hit"]
-position = Vector2(-0.25, 1)
+position = Vector2(-3.25, 1)
 shape = SubResource("RectangleShape2D_jvxg0")
 disabled = true
 
