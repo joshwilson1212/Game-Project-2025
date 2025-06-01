@@ -1,10 +1,12 @@
-[gd_scene load_steps=11 format=4 uid="uid://dcs0aiuye7y8"]
+[gd_scene load_steps=15 format=4 uid="uid://dcs0aiuye7y8"]
 
 [ext_resource type="PackedScene" uid="uid://dts6pa2db4qwv" path="res://Scene/Player.tscn" id="1_6igcf"]
 [ext_resource type="Texture2D" uid="uid://cg30ijcj675nk" path="res://Assets/Sprite-0001-export.png" id="1_u6khg"]
+[ext_resource type="Texture2D" uid="uid://dse4euniej8qx" path="res://Assets/TileSet.png" id="3_3xgnh"]
 [ext_resource type="Texture2D" uid="uid://dsbebaeyfynlc" path="res://Assets/New Piskel.png" id="3_ou18a"]
 [ext_resource type="Texture2D" uid="uid://fxel6tdqgexf" path="res://Assets/image.png" id="4_mopgc"]
 [ext_resource type="PackedScene" uid="uid://cncf27a8kaldm" path="res://Scene/Enemy_Skeleton.tscn" id="5_ivtx6"]
+[ext_resource type="PackedScene" uid="uid://csak8fv4fvrmw" path="res://Scene/warp_point.tscn" id="7_48ymf"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u6khg"]
 texture = ExtResource("1_u6khg")
@@ -24,6 +26,20 @@ texture_region_size = Vector2i(32, 32)
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_mopgc")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_48ymf"]
+texture = ExtResource("3_3xgnh")
+28:28/0 = 0
+29:28/0 = 0
+28:29/0 = 0
+29:29/0 = 0
+23:31/0 = 0
+27:32/0 = 0
+25:33/0 = 0
+27:33/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_cohtu"]
+sources/0 = SubResource("TileSetAtlasSource_48ymf")
+
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6igcf"]
 distance = -142.0
 
@@ -38,6 +54,10 @@ tile_set = SubResource("TileSet_ou18a")
 use_parent_material = true
 tile_map_data = PackedByteArray("AAD///v/AAAAAAAAAAAAAPv/AAAAAAAAAAD///r/AAAAAAAAAAD///n/AAAAAAAAAAD///j/AAAAAAAAAAAAAPj/AAAAAAAAAAAAAPn/AAAAAAAAAAAAAPr/AAAAAAAAAAD///f/AAAAAAAAAAAAAPf/AAAAAAAAAAA=")
 tile_set = SubResource("TileSet_ivtx6")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Layer1/Layer0"]
+tile_map_data = PackedByteArray("AAD//+z/AAAcABwAAAD//+3/AAAcAB0AAAAAAOz/AAAdABwAAAAAAO3/AAAdAB0AAAA=")
+tile_set = SubResource("TileSet_cohtu")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(-1, 12)
@@ -65,3 +85,6 @@ position = Vector2(-109, -70)
 
 [node name="Enemy_Skeleton4" parent="." instance=ExtResource("5_ivtx6")]
 position = Vector2(35, -73)
+
+[node name="WarpPoint" parent="." instance=ExtResource("7_48ymf")]
+position = Vector2(0, -297)

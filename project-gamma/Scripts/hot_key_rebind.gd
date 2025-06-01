@@ -2,7 +2,6 @@ class_name HotKeyRebindButton
 extends Control
 @onready var label: Label = $HBoxContainer/Label as Label
 @onready var button: Button = $HBoxContainer/Button as Button
-
 @export var action_name : String = "move_left"
 
 func _ready():
@@ -25,6 +24,8 @@ func set_action_name() -> void:
 			label.text = "Dash"
 		"Attack":
 			label.text = "Attack"
+		"Interact":
+			label.text = "Interact"
 func set_text_for_key() -> void:
 	var action_events = InputMap.action_get_events(action_name)
 	var action_keycode = "null"

@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=4 uid="uid://gvqhtnefpwyy"]
+
+[ext_resource type="PackedScene" uid="uid://dts6pa2db4qwv" path="res://Scene/Player.tscn" id="1_2kcvf"]
+[ext_resource type="Texture2D" uid="uid://dse4euniej8qx" path="res://Assets/TileSet.png" id="2_opyxl"]
+[ext_resource type="Texture2D" uid="uid://fxel6tdqgexf" path="res://Assets/image.png" id="3_o7syq"]
+[ext_resource type="FontFile" uid="uid://bcu55tx0ql7fe" path="res://Fonts/PressStart2P-vaV7.ttf" id="4_o7syq"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lgv4x"]
+texture = ExtResource("2_opyxl")
+28:28/0 = 0
+29:28/0 = 0
+28:29/0 = 0
+29:29/0 = 0
+23:31/0 = 0
+27:32/0 = 0
+25:33/0 = 0
+27:33/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_gldub"]
+sources/0 = SubResource("TileSetAtlasSource_lgv4x")
+
+[node name="Game2" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAHAP//AAAXAB8AAAAIAP//AAAXAB8AAAAIAP7/AAAXAB8AAAAHAP7/AAAXAB8AAAAHAP3/AAAXAB8AAAAIAP3/AAAXAB8AAAAHAPz/AAAXAB8AAAAIAPz/AAAXAB8AAAAHAPv/AAAXAB8AAAAIAPv/AAAZACEAAAALAP//AAAXAB8AAAAMAP//AAAXAB8AAAAMAP7/AAAXAB8AAAALAP7/AAAXAB8AAAALAP3/AAAXAB8AAAALAPz/AAAXAB8AAAAMAPz/AAAXAB8AAAAMAP3/AAAXAB8AAAAMAPv/AAAXAB8AAAALAPv/AAAZACEAAAAHAPr/AAAXAB8AAAAIAPr/AAAXAB8AAAAJAPr/AAAXAB8AAAAKAPr/AAAXAB8AAAALAPr/AAAXAB8AAAAMAPr/AAAXAB8AAAALAPn/AAAXAB8AAAAKAPn/AAAXAB8AAAAKAPj/AAAXAB8AAAAJAPj/AAAXAB8AAAAJAPn/AAAXAB8AAAAIAPn/AAAXAB8AAAAJAPf/AAAXAB8AAAAKAPf/AAAXAB8AAAAGAP7/AAAbACAAAAAGAP//AAAbACEAAAANAP7/AAAbACAAAAANAP//AAAbACEAAAAJAP7/AAAcABwAAAAJAP//AAAcAB0AAAAKAP7/AAAdABwAAAAKAP//AAAdAB0AAAAJAP3/AAAXAB8AAAAKAP3/AAAXAB8AAAAKAPz/AAAXAB8AAAAJAPz/AAAXAB8AAAAJAPv/AAAXAB8AAAAKAPv/AAAXAB8AAAA=")
+tile_set = SubResource("TileSet_gldub")
+
+[node name="Player" parent="." instance=ExtResource("1_2kcvf")]
+position = Vector2(33, -16)
+
+[node name="Image" type="Sprite2D" parent="."]
+position = Vector2(198, -18)
+scale = Vector2(0.0582192, 0.0449062)
+texture = ExtResource("3_o7syq")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 150.0
+offset_top = -51.0
+offset_right = 255.0
+offset_bottom = 14.0
+theme_override_fonts/normal_font = ExtResource("4_o7syq")
+theme_override_font_sizes/normal_font_size = 6
+text = "Hello Younge Traveler you have found my house"
