@@ -6,7 +6,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		atDoor = true
 		print("At Door")
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("Interact") and atDoor:
 		get_tree().change_scene_to_file(GAME_TEST_2)
 

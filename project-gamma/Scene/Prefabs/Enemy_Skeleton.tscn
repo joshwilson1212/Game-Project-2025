@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dupdjxmjjbm6l" path="res://Assets/New_Piskel_25_15.png" id="1_dcrwd"]
 [ext_resource type="Script" uid="uid://b23p0wxnpmwv5" path="res://Scripts/Enemy_Hitbox.gd" id="2_lo0ni"]
-[ext_resource type="Script" uid="uid://b3qrh0nlj0cub" path="res://follow_movement_c.gd" id="3_jmrvk"]
+[ext_resource type="Script" uid="uid://b3qrh0nlj0cub" path="res://Scripts/follow_movement_c.gd" id="3_jmrvk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kqndh"]
 size = Vector2(12, 28)

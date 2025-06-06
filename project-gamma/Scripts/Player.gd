@@ -2,22 +2,35 @@ class_name Player extends CharacterBody2D
 
 var SPEED = 100
 var is_ready: bool = true
+
 var Can_Attack = true
-@export var attacking = false;
+var attacking = false;
+var idle_direction = "Down Idel"
+
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var animation = $Sprites/Sword/AnimationPlayer
-var idle_direction = "Down Idel"
 @onready var attack_cd: Timer = $"Sprites/Sword/sword hit/AttackCD"
+@onready var timer = $dashtimer
+@onready var sword: Node2D = $Sprites
+@onready var swordSprite: Sprite2D = $Sprites/Sword
 
-func _process(delta):
+func _process(_delta):
 	#checks if the mouse button was clicked and moves the sword
 	if Input.is_action_just_pressed("Attack") and Can_Attack:
 		Can_Attack = false
 		attack()
 		attack_cd.start()
-func _physics_process(delta: float) -> void:
-	#finds out what direction the character is moving
+func _physics_process(_delta: float) -> void:
+	
+	
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down",)
+	
+	sword.look_at(get_global_mouse_position())
+	if sword.transform.get_rotation()*180/3.14 > 90 or sword.transform.get_rotation()*180/3.14 < -90:
+		swordSprite.flip_v = true
+	else:
+		swordSprite.flip_v = false
+	
 	
 	# Dash Code. Space key is the button for this
 	if Input.is_action_just_pressed("dash") and is_ready:
@@ -47,6 +60,12 @@ func _physics_process(delta: float) -> void:
 	#sets velocity and moves accordinly to it 
 	velocity = direction * SPEED
 	move_and_slide()
+
+func start_dash(dur):
+	timer.wait_time = dur
+	timer.start()
+	
+func is_dashing(): return !timer.is_stopped()
 	
 #resets to normal speed after dash
 func _on_dashtimer_timeout():

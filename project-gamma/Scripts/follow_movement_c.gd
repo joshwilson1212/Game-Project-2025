@@ -19,7 +19,7 @@ func update_velocity():
 	parent.velocity = new_velocity
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physical_process(delta) -> void:
+func _physical_process(_delta) -> void:
 	update_velocity()
 	parent.move_and_slide()
 

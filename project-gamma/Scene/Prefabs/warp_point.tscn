@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://csak8fv4fvrmw"]
 
-[ext_resource type="Script" uid="uid://c2xcmx6jnu602" path="res://Scene/warp_point.gd" id="1_wtbq8"]
+[ext_resource type="Script" uid="uid://c2xcmx6jnu602" path="res://Scripts/warp_point.gd" id="1_wtbq8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v0hry"]
 size = Vector2(30, 20)

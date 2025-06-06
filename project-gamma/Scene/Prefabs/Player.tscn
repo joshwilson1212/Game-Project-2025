@@ -3,10 +3,25 @@
 [ext_resource type="Script" uid="uid://do070i1x8x50q" path="res://Scripts/Player.gd" id="1_yx0hs"]
 [ext_resource type="Texture2D" uid="uid://dupdjxmjjbm6l" path="res://Assets/New_Piskel_25_15.png" id="2_3eeal"]
 [ext_resource type="Texture2D" uid="uid://c51cjp81g5352" path="res://Assets/Sprite-0003.png" id="2_jvxg0"]
-[ext_resource type="Script" uid="uid://cy3vcklb0fpim" path="res://Scene/Sword.gd" id="2_pmp2f"]
 [ext_resource type="Texture2D" uid="uid://1nly6pvwdpr4" path="res://Assets/Sprite-swing2.png" id="4_pmp2f"]
 [ext_resource type="Texture2D" uid="uid://cecnn3qg870lp" path="res://Assets/Sprite-swing4.png" id="5_3pik8"]
 [ext_resource type="Texture2D" uid="uid://can00mv4jmwpk" path="res://Assets/Sprite-swing5.png" id="6_3pik8"]
+
+[sub_resource type="GDScript" id="GDScript_84qbo"]
+script/source = "extends Node2D
+@onready var sword: Node2D = $\".\"
+@onready var swordSprite: Sprite2D = $Sword
+
+
+# Called when the node enters the scene tree for the first time.
+func _physics_process(_delta: float) -> void:
+	look_at(get_global_mouse_position())
+	#print(sword.transform.get_rotation())
+	if sword.transform.get_rotation()*180/3.14 > 90 or sword.transform.get_rotation()*180/3.14 < -90:
+		swordSprite.flip_v = true
+	else:
+		swordSprite.flip_v = false
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jvxg0"]
 size = Vector2(21.5, 24)
@@ -217,7 +232,7 @@ size = Vector2(12, 25)
 script = ExtResource("1_yx0hs")
 
 [node name="Sprites" type="Node2D" parent="."]
-script = ExtResource("2_pmp2f")
+script = SubResource("GDScript_84qbo")
 
 [node name="Sword" type="Sprite2D" parent="Sprites"]
 position = Vector2(17, 2)
