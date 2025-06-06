@@ -1,5 +1,6 @@
 extends Node2D
-@onready var pause_menue: Control = $CanvasLayer/PauseMenue
+@onready var pause_menue: Control = $"UI Elements/PauseMenue"
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

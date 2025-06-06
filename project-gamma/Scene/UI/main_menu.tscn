@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cchehq83040ya"]
+[gd_scene load_steps=5 format=3 uid="uid://cchehq83040ya"]
 
 [ext_resource type="Script" uid="uid://cp0vql8pymqks" path="res://Scripts/main_menu.gd" id="1_3si4p"]
+[ext_resource type="PackedScene" uid="uid://616cgpmmpx81" path="res://Scene/UI/Options.tscn" id="2_0hanu"]
+[ext_resource type="PackedScene" uid="uid://blrckm027tu7t" path="res://Scene/UI/controls.tscn" id="3_6i1m0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_06t4h"]
 font_size = 60
@@ -50,6 +52,14 @@ offset_right = 788.0
 offset_bottom = 161.0
 text = "Project Gamma"
 label_settings = SubResource("LabelSettings_06t4h")
+
+[node name="Options" parent="." instance=ExtResource("2_0hanu")]
+visible = false
+layout_mode = 1
+
+[node name="Controls" parent="." instance=ExtResource("3_6i1m0")]
+visible = false
+layout_mode = 1
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]

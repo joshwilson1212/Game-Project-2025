@@ -78,14 +78,14 @@ position = Vector2(35, -73)
 [node name="WarpPoint" parent="." instance=ExtResource("7_48ymf")]
 position = Vector2(0, -297)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="UI Elements" type="CanvasLayer" parent="."]
 process_mode = 2
 
-[node name="PauseMenue" parent="CanvasLayer" instance=ExtResource("9_2j816")]
+[node name="PauseMenue" parent="UI Elements" instance=ExtResource("9_2j816")]
 visible = false
 
-[node name="Options" parent="CanvasLayer" instance=ExtResource("9_tujvx")]
+[node name="Options" parent="UI Elements" instance=ExtResource("9_tujvx")]
 visible = false
 
-[node name="Controls" parent="CanvasLayer" instance=ExtResource("10_2j816")]
+[node name="Controls" parent="UI Elements" instance=ExtResource("10_2j816")]
 visible = false

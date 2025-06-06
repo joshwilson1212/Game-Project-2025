@@ -22,6 +22,7 @@ grow_vertical = 2
 script = ExtResource("1_n4v4r")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
 offset_left = 107.0
 offset_top = 98.0
 offset_right = 1035.0
@@ -75,6 +76,10 @@ action_name = "Attack"
 [node name="HotKeyRebind7" parent="MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_ev01i")]
 layout_mode = 2
 action_name = "Interact"
+
+[node name="HotKeyRebind8" parent="MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_ev01i")]
+layout_mode = 2
+action_name = "Pause"
 
 [node name="HSeparator2" type="HSeparator" parent="MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
