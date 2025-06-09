@@ -13,13 +13,12 @@ func _ready() -> void:
 
 func update_velocity():
 	if !target: return
-	
 	var direction = target.global_position - parent.global_position
 	var new_velocity = direction.normalized() * speed
 	parent.velocity = new_velocity
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _physical_process(_delta) -> void:
+func _physics_process(_delta) -> void:
 	update_velocity()
 	parent.move_and_slide()
 
