@@ -15,14 +15,23 @@ custom_minimum_size = Vector2(16, 16)
 offset_right = 16.0
 offset_bottom = 16.0
 
-[node name="AspectRatioContainer" type="AspectRatioContainer" parent="CenterContainer"]
+[node name="Panel" type="Panel" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="CenterContainer/Panel"]
+z_index = 1
 custom_minimum_size = Vector2(14, 14)
 layout_mode = 2
+offset_left = -7.0
+offset_top = -7.0
+offset_right = 7.0
+offset_bottom = 7.0
 
-[node name="Panel" type="Panel" parent="CenterContainer/AspectRatioContainer"]
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/Panel/AspectRatioContainer"]
 layout_mode = 2
+expand_mode = 1
 
-[node name="item_display" type="Sprite2D" parent="CenterContainer/AspectRatioContainer/Panel"]
+[node name="item_display" type="Sprite2D" parent="CenterContainer/Panel"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_7lkdh")

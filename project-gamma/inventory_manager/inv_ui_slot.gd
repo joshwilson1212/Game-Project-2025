@@ -1,6 +1,7 @@
 extends Panel
 
-@onready var item_visual: Sprite2D = $CenterContainer/AspectRatioContainer/Panel/item_display
+#@onready var item_visual: Sprite2D = $CenterContainer/AspectRatioContainer/Panel/item_display
+@onready var item_visual: TextureRect = $CenterContainer/Panel/AspectRatioContainer/TextureRect
 
 func update(item: InvItem):
 	if !item:
