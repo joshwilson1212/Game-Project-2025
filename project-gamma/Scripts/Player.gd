@@ -6,7 +6,11 @@ var is_ready: bool = true
 var Can_Attack = true
 var attacking = false;
 var idle_direction = "Down Idel"
-
+#for Health Bar Progress
+@export var maxHealth = 100
+@onready var currentHealth: int = maxHealth
+signal healthChanged
+#End of Health Bar Progress
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var animation = $Sprites/Sword/AnimationPlayer
 @onready var attack_cd: Timer = $"Sprites/Sword/sword hit/AttackCD"
@@ -71,6 +75,15 @@ func is_dashing(): return !timer.is_stopped()
 func _on_dashtimer_timeout():
 	is_ready = true
 	SPEED = 100
+
+#healthBar code
+func hurtByEnemy(area):
+	currentHealth -= 10
+	if currentHealth < 0:
+		currentHealth = maxHealth
+	
+	healthChanged.emit()
+#end of heathBar code
 
 #Sword Code
 func attack():

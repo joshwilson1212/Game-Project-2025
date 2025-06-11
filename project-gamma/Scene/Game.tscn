@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://dcs0aiuye7y8"]
+[gd_scene load_steps=19 format=4 uid="uid://dcs0aiuye7y8"]
 
 [ext_resource type="PackedScene" uid="uid://dts6pa2db4qwv" path="res://Scene/Prefabs/Player.tscn" id="1_6igcf"]
 [ext_resource type="Script" uid="uid://bryl3samllyax" path="res://Scripts/pause_screen.gd" id="1_tujvx"]
@@ -42,6 +42,22 @@ texture = ExtResource("3_3xgnh")
 
 [sub_resource type="TileSet" id="TileSet_cohtu"]
 sources/0 = SubResource("TileSetAtlasSource_48ymf")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g3fkh"]
+bg_color = Color(0.623199, 0.0117224, 0.0144374, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_detail = 1
+expand_margin_left = 3.0
+expand_margin_top = 3.0
+expand_margin_right = 3.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2j816"]
+bg_color = Color(0, 0.723058, 0.268841, 1)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_tujvx")
@@ -89,3 +105,22 @@ visible = false
 
 [node name="Controls" parent="UI Elements" instance=ExtResource("10_2j816")]
 visible = false
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_scale = 0.001
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
+top_level = true
+visibility_layer = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -68.74
+offset_top = 9.545
+offset_right = -5.53003
+offset_bottom = 19.545
+grow_horizontal = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_g3fkh")
+theme_override_styles/fill = SubResource("StyleBoxFlat_2j816")
+value = 100.0
+show_percentage = false
