@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://dcs0aiuye7y8"]
+[gd_scene load_steps=20 format=4 uid="uid://dcs0aiuye7y8"]
 
 [ext_resource type="PackedScene" uid="uid://dts6pa2db4qwv" path="res://Scene/Prefabs/Player.tscn" id="1_6igcf"]
 [ext_resource type="Script" uid="uid://bryl3samllyax" path="res://Scripts/pause_screen.gd" id="1_tujvx"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dsbebaeyfynlc" path="res://Assets/New Piskel.png" id="3_ou18a"]
 [ext_resource type="PackedScene" uid="uid://cncf27a8kaldm" path="res://Scene/Prefabs/Enemy_Skeleton.tscn" id="5_ivtx6"]
 [ext_resource type="PackedScene" uid="uid://csak8fv4fvrmw" path="res://Scene/Prefabs/warp_point.tscn" id="7_48ymf"]
+[ext_resource type="PackedScene" uid="uid://4wlwykeweb1n" path="res://inventory_manager/inv_ui.tscn" id="8_g3fkh"]
 [ext_resource type="PackedScene" uid="uid://b2m1hfk141s3y" path="res://Scene/UI/Pause_Screen.tscn" id="9_2j816"]
 [ext_resource type="PackedScene" uid="uid://616cgpmmpx81" path="res://Scene/UI/Options.tscn" id="9_tujvx"]
 [ext_resource type="PackedScene" uid="uid://blrckm027tu7t" path="res://Scene/UI/controls.tscn" id="10_2j816"]
@@ -78,6 +79,18 @@ tile_set = SubResource("TileSet_cohtu")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_6igcf")]
 position = Vector2(-42, -27)
+
+[node name="Inv_UI" parent="CharacterBody2D" instance=ExtResource("8_g3fkh")]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+offset_left = -50.0
+offset_top = -20.0
+offset_right = -50.0
+offset_bottom = -20.0
+grow_horizontal = 1
+grow_vertical = 0
 
 [node name="Enemy_Skeleton" parent="." instance=ExtResource("5_ivtx6")]
 position = Vector2(70, 0)

@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvxkmj8yo7blh"]
+
+[ext_resource type="Texture2D" uid="uid://bwolotnyxyh4l" path="res://STOLEN/inventory-slot.png" id="1_7lkdh"]
+[ext_resource type="Script" uid="uid://c1mo7x8qp3mu" path="res://inventory_manager/inv_ui_slot.gd" id="1_o44c4"]
+
+[node name="Inv_UI_Slot" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(16, 16)
+offset_right = 16.0
+offset_bottom = 16.0
+script = ExtResource("1_o44c4")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(16, 16)
+offset_right = 16.0
+offset_bottom = 16.0
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="CenterContainer"]
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="CenterContainer/AspectRatioContainer"]
+layout_mode = 2
+
+[node name="item_display" type="Sprite2D" parent="CenterContainer/AspectRatioContainer/Panel"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_7lkdh")
+centered = false

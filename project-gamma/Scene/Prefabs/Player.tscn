@@ -1,8 +1,9 @@
-[gd_scene load_steps=28 format=3 uid="uid://dts6pa2db4qwv"]
+[gd_scene load_steps=29 format=3 uid="uid://dts6pa2db4qwv"]
 
 [ext_resource type="Script" uid="uid://do070i1x8x50q" path="res://Scripts/Player.gd" id="1_yx0hs"]
 [ext_resource type="Texture2D" uid="uid://dupdjxmjjbm6l" path="res://Assets/New_Piskel_25_15.png" id="2_3eeal"]
 [ext_resource type="Texture2D" uid="uid://c51cjp81g5352" path="res://Assets/Sprite-0003.png" id="2_jvxg0"]
+[ext_resource type="Resource" uid="uid://y4uo0gbsr34u" path="res://inventory_manager/playerinv.tres" id="2_jwshu"]
 [ext_resource type="Texture2D" uid="uid://1nly6pvwdpr4" path="res://Assets/Sprite-swing2.png" id="4_pmp2f"]
 [ext_resource type="Texture2D" uid="uid://cecnn3qg870lp" path="res://Assets/Sprite-swing4.png" id="5_3pik8"]
 [ext_resource type="Texture2D" uid="uid://can00mv4jmwpk" path="res://Assets/Sprite-swing5.png" id="6_3pik8"]
@@ -226,10 +227,11 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_parcb"]
-size = Vector2(12, 25)
+size = Vector2(12, 12)
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_yx0hs")
+inv = ExtResource("2_jwshu")
 
 [node name="Sprites" type="Node2D" parent="."]
 script = SubResource("GDScript_84qbo")
@@ -259,7 +261,7 @@ sprite_frames = SubResource("SpriteFrames_q3xbo")
 animation = &"Right Idel"
 
 [node name="PlayerHitbox" type="CollisionShape2D" parent="."]
-position = Vector2(0, 2.5)
+position = Vector2(0, 9)
 shape = SubResource("RectangleShape2D_parcb")
 
 [node name="dashtimer" type="Timer" parent="."]

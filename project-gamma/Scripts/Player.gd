@@ -2,7 +2,6 @@ class_name Player extends CharacterBody2D
 
 var SPEED = 100
 var is_ready: bool = true
-
 var Can_Attack = true
 var attacking = false;
 var idle_direction = "Down Idel"
@@ -17,6 +16,8 @@ signal healthChanged
 @onready var timer = $dashtimer
 @onready var sword: Node2D = $Sprites
 @onready var swordSprite: Sprite2D = $Sprites/Sword
+
+@export var inv: Inv
 
 func _process(_delta):
 	#checks if the mouse button was clicked and moves the sword
