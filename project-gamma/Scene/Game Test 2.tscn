@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://gvqhtnefpwyy"]
+[gd_scene load_steps=8 format=4 uid="uid://gvqhtnefpwyy"]
 
 [ext_resource type="PackedScene" uid="uid://dts6pa2db4qwv" path="res://Scene/Prefabs/Player.tscn" id="1_2kcvf"]
 [ext_resource type="Texture2D" uid="uid://dse4euniej8qx" path="res://Assets/TileSet.png" id="2_opyxl"]
 [ext_resource type="Texture2D" uid="uid://fxel6tdqgexf" path="res://Assets/image.png" id="3_o7syq"]
 [ext_resource type="FontFile" uid="uid://bcu55tx0ql7fe" path="res://Fonts/PressStart2P-vaV7.ttf" id="4_o7syq"]
+[ext_resource type="Texture2D" uid="uid://c1sb5xf4f4wfk" path="res://Assets/2d_lights_and_shadows_neutral_point_light.webp" id="5_lgv4x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lgv4x"]
 texture = ExtResource("2_opyxl")
@@ -41,3 +42,16 @@ offset_bottom = 14.0
 theme_override_fonts/normal_font = ExtResource("4_o7syq")
 theme_override_font_sizes/normal_font_size = 6
 text = "Hello Younge Traveler you have found my house"
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.197937, 0.197937, 0.197937, 1)
+
+[node name="PointLight2D" type="PointLight2D" parent="CanvasModulate"]
+position = Vector2(104, -8)
+scale = Vector2(0.382812, 0.337891)
+texture = ExtResource("5_lgv4x")
+
+[node name="PointLight2D2" type="PointLight2D" parent="CanvasModulate"]
+position = Vector2(216, -8)
+scale = Vector2(0.382812, 0.337891)
+texture = ExtResource("5_lgv4x")
