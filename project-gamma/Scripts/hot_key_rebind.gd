@@ -28,6 +28,8 @@ func set_action_name() -> void:
 			label.text = "Interact"
 		"Pause":
 			label.text = "Pause"
+		"Inventory":
+			label.text = "Inventory"
 func set_text_for_key() -> void:
 	var action_events = InputMap.action_get_events(action_name)
 	var action_keycode = "null"

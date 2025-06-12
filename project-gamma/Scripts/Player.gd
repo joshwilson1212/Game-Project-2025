@@ -5,11 +5,13 @@ var is_ready: bool = true
 var Can_Attack = true
 var attacking = false;
 var idle_direction = "Down Idel"
+
 #for Health Bar Progress
+#please use new helth managment class logan 6-12-2025
 @export var maxHealth = 100
 @onready var currentHealth: int = maxHealth
 signal healthChanged
-#End of Health Bar Progress
+
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var animation = $Sprites/Sword/AnimationPlayer
 @onready var attack_cd: Timer = $"Sprites/Sword/sword hit/AttackCD"
@@ -18,7 +20,13 @@ signal healthChanged
 @onready var swordSprite: Sprite2D = $Sprites/Sword
 
 @export var inv: Inv
+var health = Health.new()
 
+func _ready() -> void:
+	health.set_max_health(20)
+	health.set_health(20)
+	health.health -= 1
+	print(health.get_health()) 
 func _process(_delta):
 	#checks if the mouse button was clicked and moves the sword
 	if Input.is_action_just_pressed("Attack") and Can_Attack:
@@ -26,8 +34,6 @@ func _process(_delta):
 		attack()
 		attack_cd.start()
 func _physics_process(_delta: float) -> void:
-	
-	
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down",)
 	
 	sword.look_at(get_global_mouse_position())
@@ -78,7 +84,7 @@ func _on_dashtimer_timeout():
 	SPEED = 100
 
 #healthBar code
-func hurtByEnemy(area):
+func hurtByEnemy(_area):
 	currentHealth -= 10
 	if currentHealth < 0:
 		currentHealth = maxHealth

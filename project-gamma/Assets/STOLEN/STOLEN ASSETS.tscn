@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=4 uid="uid://dtqdqnkeb2n1b"]
 
-[ext_resource type="Texture2D" uid="uid://nw8tqe7g57tk" path="res://STOLEN/Tilesets/Dungeon_Tiles.png" id="1_mmac8"]
+[ext_resource type="Texture2D" uid="uid://nw8tqe7g57tk" path="res://Assets/STOLEN/Tilesets/Dungeon_Tiles.png" id="1_mmac8"]
 [ext_resource type="PackedScene" uid="uid://dts6pa2db4qwv" path="res://Scene/Prefabs/Player.tscn" id="2_wb4yp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wb4yp"]

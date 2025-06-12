@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bvxkmj8yo7blh"]
 
-[ext_resource type="Texture2D" uid="uid://bwolotnyxyh4l" path="res://STOLEN/inventory-slot.png" id="1_7lkdh"]
+[ext_resource type="Texture2D" uid="uid://bwolotnyxyh4l" path="res://Assets/STOLEN/inventory-slot.png" id="1_7lkdh"]
 [ext_resource type="Script" uid="uid://c1mo7x8qp3mu" path="res://inventory_manager/inv_ui_slot.gd" id="1_o44c4"]
 
 [node name="Inv_UI_Slot" type="Panel"]
@@ -12,6 +12,7 @@ script = ExtResource("1_o44c4")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 custom_minimum_size = Vector2(16, 16)
+layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
 

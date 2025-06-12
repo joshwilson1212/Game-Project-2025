@@ -4,7 +4,7 @@ extends Control
 @onready var Main_M : VBoxContainer = $"../VBoxContainer"
 
 # Called when the node enters the scene tree for the first time.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	#if Input.is_action_just_pressed("Pause") and visible == true:
 	#	_on_back_pressed()
 	pass

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://qe5otr8shdoy"
-path="res://.godot/imported/Wall_Variations.png-eecc0f79d9fd80075b6465879071f700.ctex"
+uid="uid://esqgv6danr4n"
+path="res://.godot/imported/Water_tiles.png-c3c520fd37ecb12151f84829cde2c1be.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://STOLEN/Tilesets/Wall_Variations.png"
-dest_files=["res://.godot/imported/Wall_Variations.png-eecc0f79d9fd80075b6465879071f700.ctex"]
+source_file="res://Assets/STOLEN/Tilesets/Water_tiles.png"
+dest_files=["res://.godot/imported/Water_tiles.png-c3c520fd37ecb12151f84829cde2c1be.ctex"]
 
 [params]
 

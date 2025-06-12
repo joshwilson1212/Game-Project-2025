@@ -81,6 +81,10 @@ action_name = "Interact"
 layout_mode = 2
 action_name = "Pause"
 
+[node name="HotKeyRebind9" parent="MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_ev01i")]
+layout_mode = 2
+action_name = "Inventory"
+
 [node name="HSeparator2" type="HSeparator" parent="MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 12

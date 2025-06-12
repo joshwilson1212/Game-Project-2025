@@ -3,7 +3,7 @@ extends Node2D
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	await get_tree().create_timer(.1).timeout
 	if Input.is_action_just_pressed("Pause"):
 		pauseMenu()

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b2mwyeb3gr1mr" path="res://inventory_manager/Inventroy_item.gd" id="1_1labm"]
 [ext_resource type="Resource" uid="uid://dw8x0vy2jsgxi" path="res://inventory_manager/Items/Sword.tres" id="2_1labm"]
-[ext_resource type="Script" uid="uid://833u7w4jsfuv" path="res://Inventory.gd" id="3_3j8bx"]
+[ext_resource type="Script" uid="uid://833u7w4jsfuv" path="res://Scripts/Inventory.gd" id="3_3j8bx"]
 [ext_resource type="Resource" uid="uid://cu2ureumh72mt" path="res://inventory_manager/Items/Nathan1.tres" id="3_ffpqp"]
 
 [resource]

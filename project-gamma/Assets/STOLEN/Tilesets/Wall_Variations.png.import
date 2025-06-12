@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwolotnyxyh4l"
-path="res://.godot/imported/inventory-slot.png-097a57aebb08f9dee95e6e205b561cac.ctex"
+uid="uid://qe5otr8shdoy"
+path="res://.godot/imported/Wall_Variations.png-a273e5b45a447e3ffc82166fd5821025.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://STOLEN/inventory-slot.png"
-dest_files=["res://.godot/imported/inventory-slot.png-097a57aebb08f9dee95e6e205b561cac.ctex"]
+source_file="res://Assets/STOLEN/Tilesets/Wall_Variations.png"
+dest_files=["res://.godot/imported/Wall_Variations.png-a273e5b45a447e3ffc82166fd5821025.ctex"]
 
 [params]
 

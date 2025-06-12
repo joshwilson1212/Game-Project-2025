@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtrvy4fd3cbvk"
-path="res://.godot/imported/Floors_Tiles.png-ce9f33d5cf151283fd63d7679b00eb85.ctex"
+uid="uid://nw8tqe7g57tk"
+path="res://.godot/imported/Dungeon_Tiles.png-697acf96fe8a42bb8121ce8db561e98e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://STOLEN/Tilesets/Floors_Tiles.png"
-dest_files=["res://.godot/imported/Floors_Tiles.png-ce9f33d5cf151283fd63d7679b00eb85.ctex"]
+source_file="res://Assets/STOLEN/Tilesets/Dungeon_Tiles.png"
+dest_files=["res://.godot/imported/Dungeon_Tiles.png-697acf96fe8a42bb8121ce8db561e98e.ctex"]
 
 [params]
 
