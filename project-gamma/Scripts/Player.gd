@@ -79,7 +79,7 @@ func _physics_process(_delta: float) -> void:
 
 	#statments to handles walking direction and animimation from input
 	if direction.x > 0:
-		idle_direction = "Right Idel"
+		idle_direction = "Left Idel"
 		animated_sprite.flip_h = false
 		animated_sprite.play("Walking Right")
 	elif direction.x < 0:
