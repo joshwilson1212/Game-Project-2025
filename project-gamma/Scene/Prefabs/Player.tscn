@@ -240,6 +240,10 @@ script = SubResource("GDScript_84qbo")
 position = Vector2(17, 2)
 texture = ExtResource("2_jvxg0")
 
+[node name="RayCast2D" type="RayCast2D" parent="Sprites/Sword"]
+position = Vector2(3, -3)
+target_position = Vector2(500, 0)
+
 [node name="sword hit" type="Area2D" parent="Sprites/Sword"]
 scale = Vector2(-1, -1)
 

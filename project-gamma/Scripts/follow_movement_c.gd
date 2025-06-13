@@ -19,6 +19,7 @@ func update_velocity():
 
 
 func _physics_process(_delta) -> void:
+	
 	if target == null: return
 	update_velocity()
 	parent.move_and_slide()

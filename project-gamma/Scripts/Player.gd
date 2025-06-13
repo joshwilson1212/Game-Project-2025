@@ -18,10 +18,15 @@ signal healthChanged
 @onready var timer = $dashtimer
 @onready var sword: Node2D = $Sprites
 @onready var swordSprite: Sprite2D = $Sprites/Sword
+@onready var ray_cast_2d: RayCast2D = $Sprites/Sword/RayCast2D
+
 
 @export var inv: Inv
 var health = Health.new()
-
+var pull_time = 0.0
+var pull_target_destination = position
+var travel_dur = 2
+var speed = 300
 func _ready() -> void:
 	health.set_max_health(20)
 	health.set_health(20)
@@ -33,6 +38,28 @@ func _process(_delta):
 		Can_Attack = false
 		attack()
 		attack_cd.start()
+		
+
+func ability(direction):
+		
+		is_ready = false
+		$dashtimer.start()
+		SPEED *= 5
+		velocity = direction * SPEED
+
+
+func pull(target):
+	#add movement physics
+	print(target.position.length()-position.length())
+		
+	target.position = position
+	target = target.move_and_slide()
+	
+	
+	#var direction = target.global_position - parent.global_position
+	
+	#var new_velocity = direction.normalized() * speed
+	
 func _physics_process(_delta: float) -> void:
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down",)
 	
@@ -41,15 +68,15 @@ func _physics_process(_delta: float) -> void:
 		swordSprite.flip_v = true
 	else:
 		swordSprite.flip_v = false
-	
+			
 	
 	# Dash Code. Space key is the button for this
 	if Input.is_action_just_pressed("dash") and is_ready:
-		is_ready = false
-		$dashtimer.start()
-		SPEED *= 5
-		velocity = direction * SPEED
-	
+		ability(direction)
+	if Input.is_action_just_pressed("hook") and ray_cast_2d.get_collider()!=null:
+		print(ray_cast_2d.get_collider())
+		pull(ray_cast_2d.get_collider())
+
 	#statments to handles walking direction and animimation from input
 	if direction.x > 0:
 		idle_direction = "Right Idel"
@@ -57,6 +84,7 @@ func _physics_process(_delta: float) -> void:
 		animated_sprite.play("Walking Right")
 	elif direction.x < 0:
 		idle_direction = "Left Idel"
+		
 		animated_sprite.flip_h = true
 		animated_sprite.play("Walking Left")
 	elif direction.y < 0:
