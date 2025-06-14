@@ -47,19 +47,6 @@ func ability(direction):
 		SPEED *= 5
 		velocity = direction * SPEED
 
-
-func pull(target):
-	#add movement physics
-	print(target.position.length()-position.length())
-		
-	target.position = position
-	target = target.move_and_slide()
-	
-	
-	#var direction = target.global_position - parent.global_position
-	
-	#var new_velocity = direction.normalized() * speed
-	
 func _physics_process(_delta: float) -> void:
 	var direction = Input.get_vector("move_left", "move_right", "move_up", "move_down",)
 	
@@ -74,17 +61,16 @@ func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_pressed("dash") and is_ready:
 		ability(direction)
 	if Input.is_action_just_pressed("hook") and ray_cast_2d.get_collider()!=null:
-		print(ray_cast_2d.get_collider())
-		pull(ray_cast_2d.get_collider())
+		ray_cast_2d.get_collider().go_to(global_position)
+		#ray_cast_2d.get_class().pull(global_position,20)
 
 	#statments to handles walking direction and animimation from input
-	if direction.x > 0:
+	if direction.x < 0:
 		idle_direction = "Left Idel"
 		animated_sprite.flip_h = false
 		animated_sprite.play("Walking Right")
-	elif direction.x < 0:
+	elif direction.x > 0:
 		idle_direction = "Left Idel"
-		
 		animated_sprite.flip_h = true
 		animated_sprite.play("Walking Left")
 	elif direction.y < 0:

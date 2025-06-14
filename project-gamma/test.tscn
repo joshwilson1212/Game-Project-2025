@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=4 uid="uid://c0cn0g556ry45"]
 
 [ext_resource type="Texture2D" uid="uid://iljwajhhay3y" path="res://Sprite-0001.png" id="1_37kl0"]
-[ext_resource type="Texture2D" uid="uid://brbxks320xvp" path="res://Assets/ASSETS_Ours/Gamma Floor Tower 1.png" id="2_6uqi0"]
+[ext_resource type="Texture2D" uid="uid://b0qflqpmith3a" path="res://Assets/ASSETS_Ours/Gamma Floor Tower 1.png" id="2_6uqi0"]
 [ext_resource type="PackedScene" uid="uid://dts6pa2db4qwv" path="res://Scene/Prefabs/Player.tscn" id="2_8uh7m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8uh7m"]

@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://cncf27a8kaldm"]
 
+[ext_resource type="Script" uid="uid://dlx3ruh2iplxu" path="res://Scene/Prefabs/enemy_skeleton.gd" id="1_1760t"]
 [ext_resource type="Texture2D" uid="uid://dupdjxmjjbm6l" path="res://Assets/New_Piskel_25_15.png" id="1_dcrwd"]
 [ext_resource type="Texture2D" uid="uid://hddilgieqe36" path="res://Assets/ASSETS_Ours/Skeleton/Skeleton_original_.png" id="1_pokku"]
-[ext_resource type="Script" uid="uid://b23p0wxnpmwv5" path="res://Scripts/Enemy_Hitbox.gd" id="2_lo0ni"]
 [ext_resource type="Script" uid="uid://b3qrh0nlj0cub" path="res://Scripts/follow_movement_c.gd" id="3_jmrvk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kqndh"]
@@ -42,6 +42,7 @@ expand_margin_bottom = 1.0
 bg_color = Color(0.804014, 0.258531, 0.0648084, 1)
 
 [node name="Enemy_Skeleton" type="CharacterBody2D"]
+script = ExtResource("1_1760t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(3, 0)
@@ -53,7 +54,6 @@ scale = Vector2(0.369141, 0.523438)
 texture = ExtResource("1_pokku")
 
 [node name="Area2D" type="Area2D" parent="Sprite2D"]
-script = ExtResource("2_lo0ni")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
 position = Vector2(3, 0)
@@ -83,8 +83,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_pokku")
 value = 100.0
 show_percentage = false
 
-[connection signal="area_entered" from="Sprite2D/Area2D" to="Sprite2D/Area2D" method="_on_area_entered"]
-[connection signal="body_entered" from="Sprite2D/Area2D" to="Sprite2D/Area2D" method="_on_body_entered"]
+[connection signal="area_entered" from="Sprite2D/Area2D" to="." method="_on_area_entered"]
 [connection signal="body_entered" from="FollowArea" to="FollowMovementC" method="_on_follow_area_body_entered"]
 [connection signal="body_exited" from="FollowArea" to="FollowMovementC" method="_on_follow_area_body_exited"]
 [connection signal="child_entered_tree" from="FollowMovementC" to="FollowMovementC" method="_on_child_entered_tree"]
