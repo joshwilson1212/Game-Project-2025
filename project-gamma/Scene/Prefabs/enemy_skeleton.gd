@@ -42,3 +42,4 @@ func _exit_tree() -> void:
 	var coin_instance = COIN.instantiate()
 	coin_instance.position = global_position	
 	get_tree().current_scene.add_child.call_deferred(coin_instance)
+	print("testing")
