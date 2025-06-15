@@ -239,7 +239,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_parcb"]
-size = Vector2(12, 12)
+size = Vector2(12, 14)
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_yx0hs")
@@ -265,6 +265,7 @@ shape = SubResource("RectangleShape2D_jvxg0")
 disabled = true
 
 [node name="AttackCD" type="Timer" parent="Sprites/Sword/sword hit"]
+wait_time = 0.439
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprites/Sword"]
 root_node = NodePath("../../..")
@@ -279,7 +280,7 @@ sprite_frames = SubResource("SpriteFrames_q3xbo")
 animation = &"Walking up"
 
 [node name="PlayerHitbox" type="CollisionShape2D" parent="."]
-position = Vector2(0, 9)
+position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_parcb")
 
 [node name="dashtimer" type="Timer" parent="."]
