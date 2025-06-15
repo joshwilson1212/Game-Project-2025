@@ -60,8 +60,10 @@ func _physics_process(_delta: float) -> void:
 	# Dash Code. Space key is the button for this
 	if Input.is_action_just_pressed("dash") and is_ready:
 		ability(direction)
-	if Input.is_action_just_pressed("hook") and ray_cast_2d.get_collider()!=null:
-		ray_cast_2d.get_collider().go_to(global_position)
+	if Input.is_action_just_pressed("hook") and (ray_cast_2d.get_collider() != null):
+		if ray_cast_2d.get_collider().get_class() == "CharacterBody2D":
+			print(ray_cast_2d.get_collider())
+			ray_cast_2d.get_collider().go_to(global_position)
 		#ray_cast_2d.get_class().pull(global_position,20)
 
 	#statments to handles walking direction and animimation from input
